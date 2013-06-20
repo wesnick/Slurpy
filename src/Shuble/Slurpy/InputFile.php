@@ -99,9 +99,9 @@ class InputFile
      */
     public function setHandle($handle)
     {
-        if (!ctype_upper((string) $handle)) {
+        if (!ctype_upper((string) $handle) && 1 !== strlen($handle)) {
             throw new \InvalidArgumentException(sprintf(
-                '"%s" is not a valid handle. A handle must be one or more upper-case letters',
+                '"%s" is not a valid handle. A handle must be one upper-case letter',
                 $handle
             ));
         }
